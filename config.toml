@@ -1,0 +1,127 @@
+baseurl = "http://dougaparry.github.io"
+title = "Douglas A. Parry"
+
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+
+[blackfriday]
+  fractions = false
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "dougaparry"
+
+[params]
+    author = "Douglas A. Parry"
+    description = "The online research portfolio of Douglas A. Parry. Links to relevant accounts and contact information are provided."
+    keywords = "Researcher,Information Systems,Computational Social Science, Cyberpsychology"
+    info = "Lecturer & PhD Candidate in Socio Informatics"
+    avatarurl = "images/dougaparry.png"
+    #footercontent = "Enter a text here."
+
+    dateformat = "2 January, 2006"
+
+    hideCredits = true
+    hideCopyright = true
+
+    rtl = false
+
+    # Use inverted colors
+    inverted = false
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Custom CSS
+    custom_css = []
+
+[taxonomies]
+  series = "series"
+
+  [[params.social]]
+      name = "LinkedIn"
+      icon = "fab fa-linkedin"
+      weight = 4
+      url = "https://www.linkedin.com/in/dougaparry/"
+  [[params.social]]
+      name = "GoogleScholar"
+      icon = "ai ai-google-scholar"
+      weight = 4
+      url = "https://scholar.google.co.za/citations?user=EhrDFkYAAAAJ&hl=en"
+  [[params.social]]
+      name = "ResearchGate"
+      icon = "ai ai-researchgate"
+      weight = 2
+      url = "https://www.researchgate.net/profile/Douglas_Parry"
+  [[params.social]]
+      name = "Mendeley"
+      icon = "ai ai-mendeley"
+      weight = 2
+      url = "https://www.mendeley.com/profiles/douglas-a-parry/"
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/dougaparry"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 3
+    url = "https://twitter.com/dougaparry"
+[[params.social]]
+    name = "CTRG"
+        icon = "fa fa-link"
+        weight = 2
+        url = "http://suinformatics.com/ctrg/"
+[[params.social]]
+        name = "EmailMe"
+        icon = "fa fa-envelope"
+        weight = 2
+        url = "mailto:dougaparry@sun.ac.za"
+[[params.social]]
+    name = "OSF"
+    icon = "ai ai-osf"
+    weight = 2
+    url = "https://osf.io/sa5x4/"
+[[params.social]]
+    name = "ORCID"
+    icon = "ai ai-orcid"
+    weight = 2
+    url = "https://orcid.org/0000-0002-6443-3425"
+
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [[languages.en.menu.main]]
+        name = "About"
+        weight = 1
+        url = "/about/"
+
+        [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 2
+        url = "/posts/"
+
+        [[languages.en.menu.main]]
+        name = "Research"
+        weight = 3
+        url = "/research/"
+
+        [[languages.en.menu.main]]
+        name = "Resources"
+        weight = 4
+        url = "/resources/"
+
+        [[languages.en.menu.main]]
+        name = "CV"
+        weight = 5
+        url = "cv/cv.pdf"
