@@ -1,4 +1,4 @@
-baseurl = "http://dougaparry.me"
+baseurl = "https://dougaparry.netlify.com"
 title = "Douglas A. Parry"
 
 theme = "hugo-coder"
