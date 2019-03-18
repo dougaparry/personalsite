@@ -1,4 +1,4 @@
-baseurl = "http://dougaparry.com"
+baseurl = "https://dougaparry.com"
 title = "Douglas A. Parry"
 
 theme = "hugo-coder"
