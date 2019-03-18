@@ -13,6 +13,7 @@ canonifyurls = true
 
 [blackfriday]
   fractions = false
+  hrefTargetBlank = true
 
 pygmentsstyle = "b2"
 pygmentscodefences = true
