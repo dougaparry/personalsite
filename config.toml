@@ -6,6 +6,8 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
+googleAnalytics = "UA-98880526-2"
+
 paginate = 20
 canonifyurls = true
 
