@@ -61,7 +61,7 @@ purpose packages (e.g., tidyverse, dplyr, gpplot2, etc.) as well as some
 specific packages for text analysis (e.g., tidytext, snowballC,
 topicmodels, tm, ldatuning)
 
-```R
+```
     pacman::p_load(tidyverse, dplyr, rtweet, ggplot2, tidytext, SnowballC, stringr, topicmodels, tm, ldatuning)
 ```
 
@@ -82,7 +82,7 @@ again and get more. I don’t expect it to need to do this though for this
 event. Additionally, the twitter index only includes between 6 and 9
 days of tweets, so we won’t be finding anything too old here.
 
-```R
+```
     raw_tweets <- search_tweets(q = "#SONA2019", include_rts = FALSE, retryonratelimit = TRUE)
 
     save_as_csv(raw_tweets, "SONA2019_tweets.csv")
@@ -108,7 +108,7 @@ I am also loading the stop\_words dataset into our environment from the
 [tidytext](https://cran.r-project.org/package=tidytext) package so we
 can use this later in our pre-processing of the tweets.
 
-```R
+```
     data("stop_words")
     raw_tweets<-read_twitter_csv("SONA2019_tweets.csv")
 
@@ -121,7 +121,7 @@ can use this later in our pre-processing of the tweets.
 
 Now lets take a look at what our dataset looks like.
 
-```R
+```
 
     tidy_top_tweets<-
        tidy_tweets %>%
@@ -151,7 +151,7 @@ dataset. Also, there are a number of terms that will appear in nearly
 every tweet. These probably won’t be too useful either. Let’s do some
 more pre-processing
 
-```R
+```
     tidy_tweets<-tidy_tweets[-grep("\\b\\d+\\b", tidy_tweets$word),]
     tidy_tweets<-tidy_tweets[-grep("http|https|t.co|rt|\\s+", tidy_tweets$word),]
     tidy_tweets<-tidy_tweets[-grep("sona2019|ramaphosa|cyril|cyrilramaphosa|president|speech|south|africa|sona", tidy_tweets$word),]
@@ -159,7 +159,7 @@ more pre-processing
 
 Now let’s take a look at the dataset and see if it is any better.
 
-```R
+```
     tidy_top_tweets<-
        tidy_tweets %>%
             count(word) %>%
@@ -194,8 +194,7 @@ matrix where:
 -   each value contains the number of appearances of that word (term) in
     that document
 
-```R
-
+```
     tidy_DTM<-
       tidy_tweets %>%
       count(created_at, word) %>%
@@ -210,7 +209,7 @@ parameters that can be tweaked here, but these are generally accepted.
 *Warning* depending on the dataset and your machine, this may take quite
 a while to compute (upto several hours in some cases).
 
-```R
+```
     result <- FindTopicsNumber(dtm = tidy_DTM , topics = seq(from = 2, to = 40, by = 2),
                                metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010"),
                                method = "Gibbs",
@@ -220,7 +219,7 @@ a while to compute (upto several hours in some cases).
 ```
 
 Now lets visualise this
-```R
+```
     FindTopicsNumber_plot(result)
 ```
 
@@ -229,7 +228,7 @@ Now lets visualise this
 It looks like 22 is a good number of topics to go with. Now that we know
 this, we can produce our topic model as follows:
 
-```R
+```
     topic_model <- LDA(tidy_DTM, k=22, method = "Gibbs", control=list(alpha = 0.1, seed=456))
 
     topics <- tidy(topic_model, matrix="beta")
@@ -237,7 +236,7 @@ this, we can produce our topic model as follows:
 
 Let’s visualise this and see what the topics look like.
 
-```R
+```
     top_terms <- topics %>%
       group_by(topic) %>%
       top_n(10, beta) %>%
