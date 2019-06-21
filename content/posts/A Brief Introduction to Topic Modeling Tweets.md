@@ -1,3 +1,11 @@
++++
+date = "2019-06-21"
+title = "A Brief Introduction to Topic Modeling Tweets"
+slug = "topic-modeling-brief-intro"
+tags = []
+categories = []
++++
+
 In this brief tutorial I aim to demonstrate an application of topic
 modeling for the recent *state of the nation address* (SONA) in South
 Africa (i.e., the state of the union address by the president for
@@ -101,8 +109,8 @@ can use this later in our pre-processing of the tweets.
 
     tidy_tweets <- raw_tweets %>%
       select(created_at,text) %>%
-      unnest_tokens("word", text) %>% 
-      anti_join(stop_words) 
+      unnest_tokens("word", text) %>%
+      anti_join(stop_words)
 
     ## Joining, by = "word"
 
@@ -119,13 +127,13 @@ Now lets take a look at what our dataset looks like.
       geom_bar(stat="identity")+
       theme_minimal()+
       scale_y_continuous(expand = c(0, 0), limits = c(0, 20000))+
-      theme(axis.text.x = element_text(angle = -45, hjust = 0), 
+      theme(axis.text.x = element_text(angle = -45, hjust = 0),
             panel.border = element_blank(),
             axis.line = element_line(colour = "black")) +
       labs(title="State of the nation address 2019 on Twitter",
            subtitle="Tweets containing #SONA2019",
-           y = "frequency of word", 
-           x = "word") + 
+           y = "frequency of word",
+           x = "word") +
       guides(fill=FALSE)
 
 ![](Topic-Modeling_files/figure-markdown_strict/top-tweets-1-1.png)
@@ -152,13 +160,13 @@ Now let’s take a look at the dataset and see if it is any better.
       geom_bar(stat="identity")+
       theme_minimal()+
       scale_y_continuous(expand = c(0, 0), limits = c(0, 1200))+
-      theme(axis.text.x = element_text(angle = -45, hjust = 0), 
+      theme(axis.text.x = element_text(angle = -45, hjust = 0),
             panel.border = element_blank(),
             axis.line = element_line(colour = "black")) +
       labs(title="State of the nation address 2019 on Twitter",
            subtitle="Tweets containing #SONA2019",
-           y = "frequency of word", 
-           x = "word") + 
+           y = "frequency of word",
+           x = "word") +
       guides(fill=FALSE)
 
 ![](Topic-Modeling_files/figure-markdown_strict/top-tweets-2-1.png)
@@ -189,8 +197,8 @@ parameters that can be tweaked here, but these are generally accepted.
 *Warning* depending on the dataset and your machine, this may take quite
 a while to compute (upto several hours in some cases).
 
-    result <- FindTopicsNumber(dtm = tidy_DTM , topics = seq(from = 2, to = 40, by = 2), 
-                               metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010"), 
+    result <- FindTopicsNumber(dtm = tidy_DTM , topics = seq(from = 2, to = 40, by = 2),
+                               metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010"),
                                method = "Gibbs",
                                control = list(seed = 666),
                                mc.cores = 2L,
@@ -214,13 +222,13 @@ this, we can produce our topic model as follows:
 Let’s visualise this and see what the topics look like.
 
     top_terms <- topics %>%
-      group_by(topic) %>% 
-      top_n(10, beta) %>% 
-      ungroup() %>% 
+      group_by(topic) %>%
+      top_n(10, beta) %>%
+      ungroup() %>%
       arrange(topic, -beta)
 
-    top_terms %>% 
-      mutate(term = reorder(term, beta)) %>% 
+    top_terms %>%
+      mutate(term = reorder(term, beta)) %>%
       ggplot(aes(term, beta, fill=factor(topic))) +
       geom_col(show.legend = FALSE) +
       facet_wrap(~topic, scales="free", ncol = 2) +
