@@ -18,12 +18,12 @@ What is Topic Modeling?
 Topic modeling is one of many approaches used to extract meaning from
 textual data. As a point of departure, this approach assumes that words
 assume different meanings based upon their use in relation to other
-words in a body of text. The meaaning of a word is contingent on the
+words in a body of text. The meaning of a word is contingent on the
 broader context in which it is used. Topic modeling uses a bag-of-words
 approach to achieve this. In contrast to other clustering approaches
-(e.g., k-means clustering), topic modeling assigns, each document a
-probability of beling to a topic, meaning that a document can belong to
-more than a single topic. This probaability is determine through an
+(e.g., k-means clustering), topic modeling assigns each document a
+probability of belonging to a topic, meaning that a document can belong to
+more than a single topic. This probability is determined through an
 iterative Bayesian process (i.e., documents are initially assigned a
 random probability of belonging to a topic and the probabilities become
 increasingly accurate as more data are processed).
