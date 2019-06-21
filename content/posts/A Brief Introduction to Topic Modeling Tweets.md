@@ -62,7 +62,8 @@ specific packages for text analysis (e.g., tidytext, snowballC,
 topicmodels, tm, ldatuning)
 
 ```
-    pacman::p_load(tidyverse, dplyr, rtweet, ggplot2, tidytext, SnowballC, stringr, topicmodels, tm, ldatuning)
+    pacman::p_load(tidyverse, dplyr, rtweet, ggplot2, tidytext, SnowballC,
+      stringr, topicmodels, tm, ldatuning)
 ```
 
 Next, we need to link up with twitter. For this, you will need to setup
@@ -83,7 +84,9 @@ event. Additionally, the twitter index only includes between 6 and 9
 days of tweets, so we won’t be finding anything too old here.
 
 ```
-    raw_tweets <- search_tweets(q = "#SONA2019", include_rts = FALSE, retryonratelimit = TRUE)
+    raw_tweets <- search_tweets(q = "#SONA2019",
+          include_rts = FALSE,
+          retryonratelimit = TRUE)
 
     save_as_csv(raw_tweets, "SONA2019_tweets.csv")
   ```
@@ -152,9 +155,10 @@ every tweet. These probably won’t be too useful either. Let’s do some
 more pre-processing
 
 ```
-    tidy_tweets<-tidy_tweets[-grep("\\b\\d+\\b", tidy_tweets$word),]
-    tidy_tweets<-tidy_tweets[-grep("http|https|t.co|rt|\\s+", tidy_tweets$word),]
-    tidy_tweets<-tidy_tweets[-grep("sona2019|ramaphosa|cyril|cyrilramaphosa|president|speech|south|africa|sona", tidy_tweets$word),]
+tidy_tweets<-tidy_tweets[-grep("\\b\\d+\\b", tidy_tweets$word),]
+tidy_tweets<-tidy_tweets[-grep("http|https|t.co|rt|\\s+", tidy_tweets$word),]
+tidy_tweets<-tidy_tweets[-grep("sona2019|ramaphosa|cyril|cyrilramaphosa|president|speech|south|africa|sona",
+tidy_tweets$word),]
 ```
 
 Now let’s take a look at the dataset and see if it is any better.
@@ -210,12 +214,13 @@ parameters that can be tweaked here, but these are generally accepted.
 a while to compute (upto several hours in some cases).
 
 ```
-    result <- FindTopicsNumber(dtm = tidy_DTM , topics = seq(from = 2, to = 40, by = 2),
-                               metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010"),
-                               method = "Gibbs",
-                               control = list(seed = 666),
-                               mc.cores = 2L,
-                               verbose = TRUE)
+result <- FindTopicsNumber(dtm = tidy_DTM ,
+          topics = seq(from = 2, to = 40, by = 2),
+          metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010"),
+          method = "Gibbs",
+          control = list(seed = 666),
+          mc.cores = 2L,
+          verbose = TRUE)
 ```
 
 Now lets visualise this
@@ -229,7 +234,9 @@ It looks like 22 is a good number of topics to go with. Now that we know
 this, we can produce our topic model as follows:
 
 ```
-    topic_model <- LDA(tidy_DTM, k=22, method = "Gibbs", control=list(alpha = 0.1, seed=456))
+    topic_model <- LDA(tidy_DTM, k=22,
+                    method = "Gibbs",
+                    control=list(alpha = 0.1, seed=456))
 
     topics <- tidy(topic_model, matrix="beta")
 ```
