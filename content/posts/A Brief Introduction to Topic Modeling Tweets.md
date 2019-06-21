@@ -136,7 +136,7 @@ Now lets take a look at what our dataset looks like.
            x = "word") +
       guides(fill=FALSE)
 
-![](images/Topic-Modeling_files/figure-markdown_strict/top-tweets-1-1.png)
+![](/static/images/Topic-Modeling_files/figure-markdown_strict/top-tweets-1-1.png)
 
 That’s not very informative. There is still a lot of junk in our
 dataset. Also, there are a number of terms that will appear in nearly
@@ -169,7 +169,7 @@ Now let’s take a look at the dataset and see if it is any better.
            x = "word") +
       guides(fill=FALSE)
 
-![](Topic-Modeling_files/figure-markdown_strict/top-tweets-2-1.png)
+![](/static/Topic-Modeling_files/figure-markdown_strict/top-tweets-2-1.png)
 
 That’s better! Now, we could keep pruning and cleaning our dataset until
 our hannds go numb, but for now, this will probably do.
@@ -208,7 +208,7 @@ Now lets visualise this
 
     FindTopicsNumber_plot(result)
 
-![](Topic-Modeling_files/figure-markdown_strict/depict-figure-1.png)
+![](/static/Topic-Modeling_files/figure-markdown_strict/depict-figure-1.png)
 
 It looks like 22 is a good number of topics to go with. Now that we know
 this, we can produce our topic model as follows:
@@ -234,7 +234,7 @@ Let’s visualise this and see what the topics look like.
       facet_wrap(~topic, scales="free", ncol = 2) +
       coord_flip()
 
-![](Topic-Modeling_files/figure-markdown_strict/create_topics_plot-1.png)
+![](/static/Topic-Modeling_files/figure-markdown_strict/create_topics_plot-1.png)
 
 What are these topics?
 ======================
