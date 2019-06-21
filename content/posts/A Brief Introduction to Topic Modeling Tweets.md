@@ -169,7 +169,7 @@ Now let’s take a look at the dataset and see if it is any better.
            x = "word") +
       guides(fill=FALSE)
 
-![](/Topic-Modeling_files/figure-markdown_strict/top-tweets-2-1.png)
+![](/images/Topic-Modeling_files/figure-markdown_strict/top-tweets-2-1.png)
 
 That’s better! Now, we could keep pruning and cleaning our dataset until
 our hannds go numb, but for now, this will probably do.
@@ -208,12 +208,10 @@ Now lets visualise this
 
     FindTopicsNumber_plot(result)
 
-![](/Topic-Modeling_files/figure-markdown_strict/depict-figure-1.png)
+![](/images/Topic-Modeling_files/figure-markdown_strict/depict-figure-1.png)
 
 It looks like 22 is a good number of topics to go with. Now that we know
 this, we can produce our topic model as follows:
-
-    #explain beta and maybe also do gamma?
 
     topic_model <- LDA(tidy_DTM, k=22, method = "Gibbs", control=list(alpha = 0.1, seed=456))
 
@@ -234,7 +232,7 @@ Let’s visualise this and see what the topics look like.
       facet_wrap(~topic, scales="free", ncol = 2) +
       coord_flip()
 
-![](/Topic-Modeling_files/figure-markdown_strict/create_topics_plot-1.png)
+![](/images/Topic-Modeling_files/figure-markdown_strict/create_topics_plot-1.png)
 
 What are these topics?
 ======================s
