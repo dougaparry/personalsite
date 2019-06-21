@@ -235,7 +235,6 @@ Let’s visualise this and see what the topics look like.
 ![](/images/Topic-Modeling_files/figure-markdown_strict/create_topics_plot-1.png)
 
 What are these topics?
-======================s
 
 Now that we have identified some topics in the dataset, we need to
 interpret them. Importantly, topic models are not a replacement for
