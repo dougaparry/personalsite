@@ -136,7 +136,7 @@ Now lets take a look at what our dataset looks like.
            x = "word") +
       guides(fill=FALSE)
 
-![](Topic-Modeling_files/figure-markdown_strict/top-tweets-1-1.png)
+![](images/Topic-Modeling_files/figure-markdown_strict/top-tweets-1-1.png)
 
 That’s not very informative. There is still a lot of junk in our
 dataset. Also, there are a number of terms that will appear in nearly
