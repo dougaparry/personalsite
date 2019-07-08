@@ -15,7 +15,7 @@ Recently, I have developed an interest in understanding the *future of work* and
 
 - ___Parry, D.A.___,  (in press).  Computing Research in South Africa:  A Scientometric Investigation. *South African Computer Journal*.
 
-le  Roux,  D.B., ___Parry, D.A.___,  (in  press).   Investigating  differences  in  the  attention  distribution strategies of high and low media multitaskers through a two-dimensional game. *Cyberpsychology: Journal of Psychosocial Research on Cyberspace* 13(3).
+- le  Roux,  D.B., ___Parry, D.A.___,  (in  press).   Investigating  differences  in  the  attention  distribution strategies of high and low media multitaskers through a two-dimensional game. *Cyberpsychology: Journal of Psychosocial Research on Cyberspace* 13(3).
 
 - ___Parry, D.A.___,  le  Roux,  D.  B.,  &  Cornelissen,  L.A.,  (2019).   Managing  In-Lecture  Media  Use:The  Feasibility  and  Value  of  a  Split-Class  Policy. *Journal  of  Computing  in  Higher  Education*. [DOI:10.1007/s12528-019-09232-z4](https://doi.org/10.1007/s12528-019-09232-z4).
 
