@@ -9,6 +9,16 @@ Recently, I have developed an interest in understanding the *future of work* and
 
 ## Publications
 
+-  Broughton, A., Daly, M.D., Marx, N., Nieuwoudt, M., le Roux, D. B., ___Parry, D.A.___, (in press). *An exploratory investigation of online and offline social behaviour among digital natives*. Proceedings of the 2019 Annual Research Conference of the South African Institute of Computer Scientists andInformation Technologists (SAICSIT 2019), Skakuza, South Africa, ACM.
+
+- Mbilini, S., le Roux, D. B.,___Parry, D.A.___, (in press).  *Does automation influence career decisions among South African students?* Proceedings of the 2019 Annual Research Conference of the SouthAfrican Institute of Computer Scientists and Information Technologists (SAICSIT 2019), Skakuza,South Africa, ACM.
+
+- ___Parry, D.A.___,  (in press).  Computing Research in South Africa:  A Scientometric Investigation. *South African Computer Journal*.
+
+le  Roux,  D.B., ___Parry, D.A.___,  (in  press).   Investigating  differences  in  the  attention  distribution strategies of high and low media multitaskers through a two-dimensional game. *Cyberpsychology: Journal of Psychosocial Research on Cyberspace* 13(3).
+
+- ___Parry, D.A.___,  le  Roux,  D.  B.,  &  Cornelissen,  L.A.,  (2019).   Managing  In-Lecture  Media  Use:The  Feasibility  and  Value  of  a  Split-Class  Policy. *Journal  of  Computing  in  Higher  Education*. [DOI:10.1007/s12528-019-09232-z4](https://doi.org/10.1007/s12528-019-09232-z4).
+
 - ___Parry, D.A.___, (2019) Book Review: Permanently Online, Permanently Connected: Living and Communicating in a POPC World. *Information, Communication, and Society*. [DOI: 10.1080/1369118X.2019.1590441](https://doi.org/10.1080/1369118X.2019.1590441).
 
 - ___Parry D.A.___, le Roux D.B. (2019) Off-Task Media Use in Lectures: Towards a Theory of Determinants. In: Kabanda S., Suleman H., Gruner S. (eds) *ICT Education. SACLA 2018. Communications in Computer and Information Science*, vol 963. Springer, Cham. [DOI: 10.1007/978-3-030-05813-5_4](https://doi.org/10.1007/978-3-030-05813-5_4).
